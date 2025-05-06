@@ -624,6 +624,40 @@
         // Set the text of the element to the value of the "text" parameter
         textElement.src = currentUrl.searchParams.get('game')
       }
+      function showQuestion(index) {
+    document.getElementById('card').innerHTML = questions[index].q;
+}
+
+function showAnswer(index) {
+    document.getElementById('card').innerHTML = questions[index].a;
+}
+
+function nextQuestion() {
+    if (currentIndex < questions.length - 1) {
+        currentIndex++;
+        showQuestion(currentIndex);
+    }
+}
+
+function prevQuestion() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        showQuestion(currentIndex);
+    }
+}
+
+let currentIndex = 0;
+
+const questions = [
+    { q: "What is the capital of France?", a: "Paris" },
+    { q: "What is 2 + 2?", a: "4" },
+    { q: "What is the boiling point of water?", a: "100°C" }
+];
+
+window.onload = function() {
+    showQuestion(currentIndex);
+}
+
     </script>
     <script>
       googletag.cmd.push(function () {
