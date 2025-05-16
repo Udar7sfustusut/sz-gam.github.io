@@ -1,100 +1,103 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sz Games</title>
+  <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
+
+  <!-- Ruffle (Flash Emulator) -->
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
-    <title>Sz Games</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
 
-body {
- 
-}
+  <!-- Google tag (optional; can remove if not needed) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C78TXR0XFK');
+  </script>
 
-.btn-group button {
-  background-color: black; /* Green background */
- 
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
-}
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+    }
 
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
+    .btn-group button {
+      background-color: black;
+      color: white;
+      padding: 10px 24px;
+      cursor: pointer;
+      float: left;
+    }
 
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
-}
+    .btn-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
 
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: grey;
-}
+    .btn-group button:not(:last-child) {
+      border-right: none;
+    }
 
-/* Header/Logo Title */
-.header {
-  padding: 60px;
-  text-align: center;
-  background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39));
-  color: white;
-  width: auto;
-  font-size: 30px;
- 
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 15px;
-}
+    .btn-group button:hover {
+      background-color: grey;
+    }
 
-/* Page Content */
+    .header {
+      padding: 60px;
+      text-align: center;
+      background: linear-gradient(to bottom right, #9a9a9a, rgb(39, 39, 39));
+      font-size: 30px;
+      border-radius: 15px;
+    }
 
-</style>
-</head>
-<body onresize="resize()">
-<style>
     .game {
-        position: absolute;
-color: white;
-
-  transform: scale(1.8);
-  z-index: 3;
-  font-family: Arial, Helvetica, sans-serif;
+      position: absolute;
+      transform: scale(1.8);
+      z-index: 3;
     }
+
     .fade {
-        position: absolute;
-        background: linear-gradient(to bottom, #1d1d1d, #1d1d1d5d, rgba(39, 39, 39, 0));
-        width: 300px;
-        height: 150px;
-     border-radius: 15px;
+      position: absolute;
+      background: linear-gradient(to bottom, #1d1d1d, #1d1d1d5d, rgba(39, 39, 39, 0));
+      width: 300px;
+      height: 150px;
+      border-radius: 15px;
     }
 
-.em {
-  margin: 0 auto;
-}
-   
-</style>
+    .em {
+      margin: 0 auto;
+      display: block;
+    }
+  </style>
+</head>
 
-<div>
-   <embed class="em" id="game" width=" 100%;" height="550px" src="https://sz-games.github.io/games/swf/bloxorz.swf?raw=true" ></embed>
-</div>
+<body onresize="resizeEmbed()">
 
-
-  </body>
+  <div>
+    <embed
+      class="em"
+      id="game"
+      style="width: 100%;"
+      height="550px"
+      src="https://hwugifijifjjhijsoohsoohhdhosjijihfijo.netlify.app/games/swf/bloxorz.swf">
+    </embed>
+  </div>
 
   <script>
+    function resizeEmbed() {
+      let hh = window.innerHeight - 100;
+      document.getElementById('game').height = hh;
+    }
 
-let hh = window.innerHeight - 100;
-
-
-document.getElementById('game').height = hh;
-window.onresize = function(event) {
-  let hh = window.innerHeight - 100;
-
-document.getElementById('game').height = hh;
-}
+    window.onload = resizeEmbed;
+    window.onresize = resizeEmbed;
   </script>
+</body>
 </html>
