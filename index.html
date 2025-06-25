@@ -997,6 +997,7 @@
                 </a>
               </div>
 
+<<<<<<< HEAD
               <div
                 class="featgameit"
                 style="margin: 0 7.5px; overflow: hidden; flex: 1; min-width: 120px; max-width: 150px"
@@ -1032,6 +1033,97 @@
                       </span>
                     </p>
                   </div>
+=======
+<style>
+  .featgameit {
+    position: relative !important;
+    z-index: 1 !important;
+    overflow: hidden !important;
+    margin: 0 7.5px;
+    flex: 1;
+    min-width: 120px;
+    max-width: 150px;
+  }
+
+  .featgameit > a {
+    position: relative;
+    display: block;
+    z-index: 1;
+  }
+
+  .featgameit > a > div {
+    position: absolute !important;
+    z-index: 3 !important;
+    border-radius: 15px;
+    margin: 13px;
+    width: 100px;
+    height: 25px;
+    background: linear-gradient(to right, rgb(211, 51, 22), rgb(197, 36, 125), rgb(221, 12, 117));
+  }
+
+  .featgameit > a > div p {
+    color: white;
+    font-weight: 600;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    position: relative;
+    margin: 0;
+  }
+
+  .featgameit > a > div p .material-icons {
+    font-size: 22px;
+    position: absolute;
+    margin-left: 3px;
+    top: -3px;
+  }
+
+  .featgameit > a h1 {
+    position: absolute !important;
+    z-index: 2 !important;
+    text-shadow: 0 0 6px black;
+    color: white !important;
+    margin: 20px !important;
+    font-size: 18px !important;
+    bottom: 0;
+  }
+
+  .featgameit img {
+    position: relative !important;
+    z-index: 0 !important;
+    filter: blur(2px) brightness(95%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+  }
+
+  button, .btn-group button, .topnav p {
+    position: relative !important;
+    z-index: 10000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+</style>
+
+<div class="featgameit">
+  <a href="/games/game.html?game=/sz-brawlers.html">
+    <div>
+      <p>
+        Popular
+        <span class="material-icons notranslate">local_fire_department</span>
+      </p>
+    </div>
+    <h1>
+      Brawl Stars <br />(SZ Brawlers)
+    </h1>
+    <img src="./brawl-stars.jpg" alt="brawl stars" />
+  </a>
+</div>
+
+              
+>>>>>>> parent of e3d3327 (Update index.html)
                   <h1
                     style="
                       bottom: 0;
